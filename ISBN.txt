@@ -1,0 +1,20 @@
+def isbn(livros):
+    invalidos = []
+    
+    for livro in livros:
+        invalido = 1
+        if(len(livros[livro])==13):
+            first = 0
+            second = 0
+            for num in livros[livro]:
+                first += int(num)
+                second += int(num) * 3
+                first, second = second, first
+            
+            if(first%10 == 0 or second%10 == 0):
+                invalido = 0
+        
+        if(invalido==1):
+            invalidos.append(livro)
+            
+    return sorted(invalidos)
