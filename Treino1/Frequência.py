@@ -1,9 +1,9 @@
 def frequencia(texto):
     
-    dic = {}
+    ha = {}
     for nome in texto.split():
-        if nome not in dic:
-            dic[nome] = 0
-        dic[nome] = dic[nome] + 1
+        if nome not in ha:
+            ha[nome] = 0
+        ha[nome] = ha[nome] + 1
 
-    return sorted(sorted(dic), key=lambda x: dic[x], reverse = True)
+    return sorted(sorted(ha), key=lambda x: ha[x], reverse = True)
