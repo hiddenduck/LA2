@@ -20,8 +20,8 @@ def caminho(mapa):
     
     caminho = ""
     if flag == 1:
+        anda = {"N": (0,-1), "S": (0,1), "E": (1,0), "O": (-1,0)} # A ordem está trocada 
         while d in pai:
-            anda = {"N": (0,-1), "S": (0,1), "E": (1,0), "O": (-1,0)} # A ordem está trocada 
             caminho += "".join(filter(lambda x: (pai[d][0] + anda[x][0], pai[d][1] + anda[x][1]) == d, anda))
             d = pai[d]
     
