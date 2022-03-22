@@ -4,7 +4,7 @@ def dijkstra(mapa,o, tamanhoX, tamanhoY):
     orla = {o}
     while orla:
         v = min(orla,key=lambda x:dist[x])
-        if v[1] == len(mapa)-1:
+        if v[1] == tamanhoY-1:
             break
         orla.remove(v)
         andar = map(lambda x, y: (x[0]+y[0], x[1]+y[1]), [(0, 1), (0, -1), (1, 0), (-1, 0)], [v] * 4)
