@@ -48,8 +48,8 @@ def saque(mapa):
     tamanhoY = len(mapa)
     ha = {(x,y):float("-Inf") for x in range(tamanhoX) for y in range(tamanhoY) if mapa[y][x] == '#'}
     
-    for y in range(tamanhoY):
-        for x in range(tamanhoX):
+    for x in range(tamanhoX):
+        for y in range(tamanhoY):
             if (x,y) not in ha:
                 if mapa[y][x] != ".":
                     valorAtual = int(mapa[y][x])
