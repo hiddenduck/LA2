@@ -62,5 +62,7 @@ def saque(mapa):
                     ha[(x,y)] = valorAtual + ha[(l[0][0], l[0][1])]
                 else:
                     ha[(x,y)] = valorAtual
+            if x > 0:
+                del ha[(x-1, y)]
     
     return ha[(tamanhoX-1, tamanhoY-1)]
