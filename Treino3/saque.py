@@ -18,7 +18,7 @@ def procuraRec(pos, mapa):
 def saqueRec(mapa):
     return procuraRec((0,0), mapa)
 
-def procuraMemo(pos, mapa, ha): # 80%
+def procuraMemo(pos, mapa, ha):
     if pos in ha:
         return ha[pos]
         
@@ -64,5 +64,7 @@ def saque(mapa):
                     ha[(x,y)] = valorAtual
             if x > 0:
                 del ha[(x-1, y)]
+            if x == tamanhoX-1 and y > 0:
+                del ha[(x, y-1)]
     
     return ha[(tamanhoX-1, tamanhoY-1)]
