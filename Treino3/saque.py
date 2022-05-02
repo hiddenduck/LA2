@@ -18,7 +18,7 @@ def procuraRec(pos, mapa):
 def saqueRec(mapa):
     return procuraRec((0,0), mapa)
 
-def procuraMemo(pos, mapa, ha):
+def procuraMemo(pos, mapa, ha): # 80%
     if pos in ha:
         return ha[pos]
         
@@ -46,11 +46,13 @@ def saque(mapa):
         return 0
     tamanhoX = len(mapa[0])
     tamanhoY = len(mapa)
-    ha = {(x,y):float("-Inf") for x in range(tamanhoX) for y in range(tamanhoY) if mapa[y][x] == '#'}
+    ha = {}
     
     for x in range(tamanhoX):
         for y in range(tamanhoY):
-            if (x,y) not in ha:
+            if mapa[y][x] == '#':
+                ha[(x,y)] = float("-Inf")
+            else:
                 if mapa[y][x] != ".":
                     valorAtual = int(mapa[y][x])
                 else:
@@ -66,5 +68,5 @@ def saque(mapa):
                 del ha[(x-1, y)]
             if x == tamanhoX-1 and y > 0:
                 del ha[(x, y-1)]
-    
+
     return ha[(tamanhoX-1, tamanhoY-1)]
